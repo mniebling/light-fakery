@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/mniebling/light-fakery/issues"
   },
-  "homepage": "https://github.com/mniebling/light-fakery#readme"
+  "homepage": "https://github.com/mniebling/light-fakery#readme",
+  "devDependencies": {
+    "typescript": "4.3.2"
+  }
 }

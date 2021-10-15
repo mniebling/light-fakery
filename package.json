@@ -1,11 +1,18 @@
 {
   "name": "light-fakery",
   "version": "0.0.1",
-  "description": "A lightweight library for generating fake data in Javascript",
-  "main": "index.js",
+  "description": "A lightweight library for generating fake data",
   "type": "module",
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "prebuild": "rimraf ./dist",
     "build": "tsc",
+    "release": "release-it --verbose",
     "test": "ava"
   },
   "repository": {
@@ -20,6 +27,8 @@
   "homepage": "https://github.com/mniebling/light-fakery#readme",
   "devDependencies": {
     "ava": "4.0.0-alpha.2",
+    "release-it": "14.11.6",
+    "rimraf": "3.0.2",
     "typescript": "4.4.4"
   }
 }

@@ -1,0 +1,16 @@
+{
+	"git": {
+		"requireCleanWorkingDir": false
+	},
+	"hooks": {
+		"before:init": [
+			"npm run test",
+			"npm run build"
+		]
+	},
+	"prompt": {
+		"src": {
+			"status": true
+		}
+	}
+}

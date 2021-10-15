@@ -2,9 +2,9 @@
 
 A lightweight library for generating fake data in JS/TS.
 
-Guiding principles:
+Its guiding principles are:
 
-- Structured as a pure ES module
+- Structured as a [pure ESM package](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c)
 - Tree-shakable so you only bundle data you are using
 - First class support for consuming the library in TypeScript
 - Focused on fake data use cases that make sense in a business-y environment
@@ -20,6 +20,8 @@ integer({ min: 0, max: 100 }) // => 63
 
 ### Development
 
-`npm run build` — compile Typescript and emit to `./dist`
+`npm run build` — Compile Typescript and emit to `./dist`.
 
-`npm test` — run unit tests on compiled output
+`npm test` — Run unit tests on the compiled output.
+
+`npm run release` — Kick off an NPM release. You'll be prompted for the release details and the command will run a build before releasing.

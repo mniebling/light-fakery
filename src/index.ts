@@ -44,3 +44,15 @@ export function integer(options: { min: number, max: number }): number {
 
   return Math.floor(_random() * (max - min + 1) + min)
 }
+
+/**
+ * Returns a random element from an array.
+ *
+ * Returns undefined if the array is empty.
+ */
+export function fromArray<T>(array: T[]): T | undefined {
+
+  if (array.length === 0) return undefined
+
+  return array[integer({ min: 0, max: array.length - 1 })]
+}

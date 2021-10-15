@@ -13,8 +13,9 @@ Its guiding principles are:
 ### Usage
 
 ```typescript
-import { integer } from 'light-fakery'
+import { fromArray, integer } from 'light-fakery'
 
+fromArray([1, 2, 3]) // => 3
 integer({ min: 0, max: 100 }) // => 63
 ```
 

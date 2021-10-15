@@ -3,8 +3,10 @@
   "version": "0.0.1",
   "description": "A lightweight library for generating fake data in Javascript",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "test": "ava"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,7 @@
   },
   "homepage": "https://github.com/mniebling/light-fakery#readme",
   "devDependencies": {
-    "typescript": "4.3.2"
+    "ava": "4.0.0-alpha.2",
+    "typescript": "4.4.4"
   }
 }

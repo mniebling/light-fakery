@@ -1,6 +1,6 @@
 {
   "name": "light-fakery",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A lightweight library for generating fake data",
   "type": "module",
   "exports": "./dist/index.js",

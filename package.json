@@ -3,6 +3,7 @@
   "version": "0.0.2",
   "description": "A lightweight library for generating fake data",
   "type": "module",
+  "main": "./dist/index.js",
   "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "sideEffects": false,

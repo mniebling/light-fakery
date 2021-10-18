@@ -9,6 +9,7 @@ Its guiding principles are:
 - First class support for consuming the library in TypeScript
 - Focused on fake data use cases that make sense in a business-y environment
 - Easy to extend if you need additional data
+- Zero dependencies
 
 ### Usage
 

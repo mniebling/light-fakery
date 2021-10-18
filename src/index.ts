@@ -35,5 +35,5 @@ export function setSeed(seed: number): void {
   random = mulberry32(seed)
 }
 
-export { fromArray } from './from-array.js'
+export { fromArray } from './fromArray.js'
 export { integer } from './integer.js'

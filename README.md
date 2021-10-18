@@ -14,10 +14,16 @@ Its guiding principles are:
 ### Usage
 
 ```typescript
-import { fromArray, integer } from 'light-fakery'
+import { fromArray, integer, random } from 'light-fakery'
 
-fromArray([1, 2, 3]) // => 3
-integer({ min: 0, max: 100 }) // => 63
+random()
+// => 0.20554963243193924
+
+fromArray([1, 2, 3])
+// => 3
+
+integer({ min: 0, max: 100 })
+// => 63
 ```
 
 ### Development

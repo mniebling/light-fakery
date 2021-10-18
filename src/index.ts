@@ -14,7 +14,6 @@ function mulberry32(seed: number) {
   }
 }
 
-
 /**
  * This is light-fakery's internal random number generator (PRNG).
  *
@@ -24,7 +23,6 @@ function mulberry32(seed: number) {
  * the custom seed.
  */
 export let random = mulberry32(Date.now())
-
 
 /**
  * A method to update the random generator with a fixed seed.

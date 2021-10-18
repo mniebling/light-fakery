@@ -15,8 +15,15 @@ function mulberry32(seed: number) {
 }
 
 
-// By default, create a randomly seeded generator
-let _random = mulberry32(Date.now())
+/**
+ * This is light-fakery's internal random number generator (PRNG).
+ *
+ * It returns numbers between 0 and 1, and by default initializes with a seed
+ * based on the current time. To create a deterministic generator, call the
+ * `setSeed` function; after that point, all light-fakery functions will use
+ * the custom seed.
+ */
+export let _random = mulberry32(Date.now())
 
 
 /**
@@ -30,29 +37,5 @@ export function setSeed(seed: number): void {
   _random = mulberry32(seed)
 }
 
-/**
- * Returns a random integer between `min` and `max`.
- *
- * Note that the result is inclusive of both `min` and `max`.
- */
-export function integer(options: { min: number, max: number }): number {
-
-  if (options.min > options.max) throw new Error(`The min value must be less than or equal to the max`)
-
-  const min = Math.ceil(options.min)
-  const max = Math.floor(options.max)
-
-  return Math.floor(_random() * (max - min + 1) + min)
-}
-
-/**
- * Returns a random element from an array.
- *
- * Returns undefined if the array is empty.
- */
-export function fromArray<T>(array: T[]): T | undefined {
-
-  if (array.length === 0) return undefined
-
-  return array[integer({ min: 0, max: array.length - 1 })]
-}
+export { fromArray } from './from-array.js'
+export { integer } from './integer.js'

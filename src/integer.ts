@@ -1,4 +1,4 @@
-import { _random } from './index.js'
+import { random } from './index.js'
 
 /**
  * Returns a random integer between `min` and `max`.
@@ -12,5 +12,5 @@ import { _random } from './index.js'
   const min = Math.ceil(options.min)
   const max = Math.floor(options.max)
 
-  return Math.floor(_random() * (max - min + 1) + min)
+  return Math.floor(random() * (max - min + 1) + min)
 }

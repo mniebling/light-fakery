@@ -23,7 +23,7 @@ function mulberry32(seed: number) {
  * `setSeed` function; after that point, all light-fakery functions will use
  * the custom seed.
  */
-export let _random = mulberry32(Date.now())
+export let random = mulberry32(Date.now())
 
 
 /**
@@ -34,7 +34,7 @@ export let _random = mulberry32(Date.now())
  */
 export function setSeed(seed: number): void {
 
-  _random = mulberry32(seed)
+  random = mulberry32(seed)
 }
 
 export { fromArray } from './from-array.js'

@@ -11,7 +11,10 @@ Its guiding principles are:
 - Easy to extend if you need additional data
 - Zero dependencies
 
+
 ### Usage
+
+#### Core methods
 
 ```typescript
 import { fromArray, integer, random } from 'light-fakery'
@@ -19,12 +22,30 @@ import { fromArray, integer, random } from 'light-fakery'
 random()
 // => 0.20554963243193924
 
-fromArray([1, 2, 3])
-// => 3
-
 integer({ min: 0, max: 100 })
 // => 63
+
+fromArray([1, 2, 3])
+// => 3
 ```
+
+#### People
+
+A person's properties are grouped together to make it easy to generate e.g., a contact card with a name and email that match.
+
+```typescript
+import { person } from 'light-fakery'
+
+person()
+// => {
+//   firstName: 'Ivan',
+//   lastName: 'Barros',
+//   fullName: 'Ivan Barros',
+//   emailAddress: 'ivan.barros@gmail.com',
+// }
+
+```
+
 
 ### Development
 

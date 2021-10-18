@@ -13,6 +13,21 @@ test('produces integers within range', t => {
   t.is(integer({ min: 0, max: 10 }), 10)
 })
 
+test('throws if min or max not provided', t => {
+  t.throws(
+    () => integer({ min: 2 }),
+    { message: `Min and max values must be provided` },
+  )
+  t.throws(
+    () => integer({ max: 2 }),
+    { message: `Min and max values must be provided` },
+  )
+  t.throws(
+    () => integer(),
+    { message: `Min and max values must be provided` },
+  )
+})
+
 test('throws if min > max', t => {
   t.throws(
     () => integer({ min: 2, max: 1 }),

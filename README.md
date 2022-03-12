@@ -48,11 +48,14 @@ person()
 
 #### Jargon
 
-The library plans to include fake data that's appropriate for various "business" purposes.
-For now, just phrases are supported.
+The library includes fake data that's appropriate for various "business" purposes.
+For now, there are phrases and document titles.
 
 ```typescript
-import { jargonPhrase } from 'light-fakery'
+import { jargonDocumentTitle, jargonPhrase } from 'light-fakery'
+
+jargonDocumentTitle()
+// => 'Conceptual Framework on Resource Availability'
 
 jargonPhrase()
 // => 'Integrate an outcomes-driven strategic alliance'

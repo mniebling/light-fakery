@@ -37,5 +37,5 @@ export function setSeed(seed: number): void {
 
 export { fromArray } from './fromArray.js'
 export { integer } from './integer.js'
-export { jargonPhrase } from './jargon.js'
+export { jargonDocumentTitle, jargonPhrase } from './jargon.js'
 export { person } from './person.js'

@@ -46,6 +46,18 @@ person()
 
 ```
 
+#### Jargon
+
+The library plans to include fake data that's appropriate for various "business" purposes.
+For now, just phrases are supported.
+
+```typescript
+import { jargonPhrase } from 'light-fakery'
+
+jargonPhrase()
+// => 'Integrate an outcomes-driven strategic alliance'
+```
+
 #### Deterministic data
 
 By default, light-fakery uses a random seed that's generated at runtime. If you want

@@ -5,15 +5,21 @@ import { jargonPhrases } from './data/jargon-phrases.js'
 /**
  * Returns a jargon document title. For example, "Theoretical Aspects of Strategic Planning and Performance".
  */
- export function jargonDocumentTitle() {
+ export function jargonDocumentTitle(): string {
 
-  return fromArray(jargonDocuments)
+  const title = fromArray(jargonDocuments)
+  if (!title) throw new Error(`fromArray returned undefined, which should not happen when fetching from 'jargonDocuments'`)
+
+  return title
 }
 
 /**
  * Returns a jargon phrase. For example, "Transform overarching barriers".
  */
-export function jargonPhrase() {
+export function jargonPhrase(): string {
 
-  return fromArray(jargonPhrases)
+  const phrase = fromArray(jargonPhrases)
+  if (!phrase) throw new Error(`fromArray returned undefined, which should not happen when fetching from 'jargonDocuments'`)
+
+  return phrase
 }

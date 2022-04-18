@@ -1,4 +1,4 @@
-import { fromArray } from './fromArray.js'
+import { randomFromArray } from './fromArray.js'
 import { domains } from './data/domains.js'
 import { names } from './data/names.js'
 
@@ -10,7 +10,7 @@ export interface FakePerson {
 }
 
 /**
- * Returns a person object, containing:
+ * Returns a random person object, containing:
  *
  * - `fullName`: A first name followed by a surname (all the fake names are from surname-last cultures)
  * - `firstName`: A first name
@@ -20,11 +20,11 @@ export interface FakePerson {
  * The properties are grouped together to make it easy to generate e.g., a contact
  * card with a name and email that match.
  */
-export function person(): FakePerson {
+export function randomPerson(): FakePerson {
 
-  const name = fromArray(names)
-  const domain = fromArray(domains)
-  if (!name || !domain) throw new Error(`fromArray returned undefined, which should not happen when fetching from 'names' or 'domains'`)
+  const name = randomFromArray(names)
+  const domain = randomFromArray(domains)
+  if (!name || !domain) throw new Error(`randomFromArray returned undefined, which should not happen when fetching from 'names' or 'domains'`)
 
   return {
     emailAddress: `${name[0]}.${name[1]}@${domain}`.toLowerCase(),

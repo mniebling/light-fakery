@@ -1,25 +1,25 @@
 import test from 'ava'
-import { fromArray, setSeed } from '../dist/index.js'
+import { randomFromArray, setSeed } from '../dist/index.js'
 
 test.beforeEach(t => {
   setSeed(1)
 })
 
 test('returns undefined if array is empty', t => {
-  t.is(fromArray([]), undefined)
+  t.is(randomFromArray([]), undefined)
 })
 
 test('returns something from the array', t => {
   t.is(
-    fromArray(['a', 'b', 'c']),
+    randomFromArray(['a', 'b', 'c']),
     'b'
   )
   t.is(
-    fromArray(['a', 'b', 'c']),
+    randomFromArray(['a', 'b', 'c']),
     'a'
   )
   t.is(
-    fromArray(['only']),
+    randomFromArray(['only']),
     'only'
   )
 })

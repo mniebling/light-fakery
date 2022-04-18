@@ -17,15 +17,15 @@ Its guiding principles are:
 #### Core methods
 
 ```typescript
-import { fromArray, integer, random } from 'light-fakery'
+import { randomFromArray, randomInteger, random } from 'light-fakery'
 
 random()
 // => 0.20554963243193924
 
-integer({ min: 0, max: 100 })
+randomInteger({ min: 0, max: 100 })
 // => 63
 
-fromArray([1, 2, 3])
+randomFromArray([1, 2, 3])
 // => 3
 ```
 
@@ -36,14 +36,13 @@ A person's properties are grouped together to make it easy to generate e.g., a c
 ```typescript
 import { person } from 'light-fakery'
 
-person()
+randomPerson()
 // => {
 //   firstName: 'Ivan',
 //   lastName: 'Barros',
 //   fullName: 'Ivan Barros',
 //   emailAddress: 'ivan.barros@gmail.com',
 // }
-
 ```
 
 #### Jargon
@@ -52,12 +51,12 @@ The library includes fake data that's appropriate for various "business" purpose
 For now, there are phrases and document titles.
 
 ```typescript
-import { jargonDocumentTitle, jargonPhrase } from 'light-fakery'
+import { randomJargonDocumentTitle, randomJargonPhrase } from 'light-fakery'
 
-jargonDocumentTitle()
+randomJargonDocumentTitle()
 // => 'Conceptual Framework on Resource Availability'
 
-jargonPhrase()
+randomJargonPhrase()
 // => 'Integrate an outcomes-driven strategic alliance'
 ```
 
@@ -68,10 +67,10 @@ the results of the random methods to be deterministic you can call `setSeed` wit
 a specific value (this is how the project's unit tests work).
 
 ```typescript
-import { setSeed, integer } from 'light-fakery'
+import { setSeed, randomInteger } from 'light-fakery'
 
 setSeed(1) // after this point, the data will be deterministic
-integer({ min: 0, max: 10 }) // this will always return 6
+randomInteger({ min: 0, max: 10 }) // this will always return 6
 
 setSeed(Date.now()) // if you need to stop being deterministic
 ```

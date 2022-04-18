@@ -1,5 +1,5 @@
 import test from 'ava'
-import { jargonPhrase, setSeed } from '../dist/index.js'
+import { randomJargonPhrase, setSeed } from '../dist/index.js'
 
 test.beforeEach(t => {
   setSeed(1)
@@ -7,6 +7,6 @@ test.beforeEach(t => {
 
 test('returns a jargon phrase', t => {
 
-  t.is(jargonPhrase(), 'Integrate an outcomes-driven strategic alliance')
-  t.is(jargonPhrase(), 'Adjust your planned-giving developer story')
+  t.is(randomJargonPhrase(), 'Integrate an outcomes-driven strategic alliance')
+  t.is(randomJargonPhrase(), 'Adjust your planned-giving developer story')
 })

@@ -1,16 +1,22 @@
 import { randomFromArray } from './fromArray.js'
+import { jargonAdjectives } from './data/jargon-adjectives.js'
 import { jargonDocuments } from './data/jargon-documents.js'
 import { jargonPhrases } from './data/jargon-phrases.js'
+
+/**
+ * Returns a random jargon adjective. For example, "Decentralized".
+ */
+ export function randomJargonAdjective(): string {
+
+  return randomFromArray(jargonAdjectives)
+}
 
 /**
  * Returns a random jargon document title. For example, "Theoretical Aspects of Strategic Planning and Performance".
  */
  export function randomJargonDocumentTitle(): string {
 
-  const title = randomFromArray(jargonDocuments)
-  if (!title) throw new Error(`fromArray returned undefined, which should not happen when fetching from 'jargonDocuments'`)
-
-  return title
+  return randomFromArray(jargonDocuments)
 }
 
 /**
@@ -18,8 +24,5 @@ import { jargonPhrases } from './data/jargon-phrases.js'
  */
 export function randomJargonPhrase(): string {
 
-  const phrase = randomFromArray(jargonPhrases)
-  if (!phrase) throw new Error(`fromArray returned undefined, which should not happen when fetching from 'jargonDocuments'`)
-
-  return phrase
+  return randomFromArray(jargonPhrases)
 }

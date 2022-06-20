@@ -5,8 +5,11 @@ test.beforeEach(t => {
   setSeed(1)
 })
 
-test('returns undefined if array is empty', t => {
-  t.is(randomFromArray([]), undefined)
+test('throws if array is empty', t => {
+  t.throws(
+    () => randomFromArray([]),
+    { message: `Argument to randomFromArray must have length > 0` },
+  )
 })
 
 test('returns something from the array', t => {

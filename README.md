@@ -17,10 +17,13 @@ Its guiding principles are:
 #### Core methods
 
 ```typescript
-import { randomFromArray, randomInteger, random } from 'light-fakery'
+import { random, randomBoolean, randomInteger, randomFromArray } from 'light-fakery'
 
 random()
 // => 0.20554963243193924
+
+randomBoolean()
+// => true
 
 randomInteger({ min: 0, max: 100 })
 // => 63

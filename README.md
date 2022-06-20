@@ -54,7 +54,10 @@ The library includes fake data that's appropriate for various "business" purpose
 For now, there are phrases and document titles.
 
 ```typescript
-import { randomJargonDocumentTitle, randomJargonPhrase } from 'light-fakery'
+import { randomJargonAdjective, randomJargonDocumentTitle, randomJargonPhrase } from 'light-fakery'
+
+randomJargonAdjective()
+// => 'Decentralized'
 
 randomJargonDocumentTitle()
 // => 'Conceptual Framework on Resource Availability'

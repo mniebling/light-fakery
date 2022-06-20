@@ -51,7 +51,7 @@ randomPerson()
 #### Jargon
 
 The library includes fake data that's appropriate for various "business" purposes.
-For now, there are phrases and document titles.
+For now, there are adjectives, phrases and document titles.
 
 ```typescript
 import { randomJargonAdjective, randomJargonDocumentTitle, randomJargonPhrase } from 'light-fakery'

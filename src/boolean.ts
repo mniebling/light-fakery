@@ -1,4 +1,4 @@
-import { randomFromArray } from './fromArray.js'
+import { randomFromArray } from './from-array.js'
 
 /**
  * Returns either `true` or `false` with equal probability.

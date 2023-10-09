@@ -1,4 +1,4 @@
-import { randomFromArray } from './fromArray.js'
+import { randomFromArray } from './from-array.js'
 import { domains } from './data/domains.js'
 import { names } from './data/names.js'
 

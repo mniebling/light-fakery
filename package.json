@@ -14,8 +14,7 @@
     "prebuild": "rimraf ./dist",
     "build": "tsc",
     "release": "release-it --verbose",
-    "pretest": "npm run build",
-    "test": "ava"
+    "test": "glob -c \"node --loader tsx --no-warnings --test\" \"./test/**/*.ts\""
   },
   "repository": {
     "type": "git",
@@ -28,9 +27,11 @@
   },
   "homepage": "https://github.com/mniebling/light-fakery#readme",
   "devDependencies": {
-    "ava": "4.1.0",
+    "@types/node": "20.8.0",
+    "glob": "10.3.10",
     "release-it": "16.2.1",
     "rimraf": "5.0.5",
+    "tsx": "3.13.0",
     "typescript": "5.2.2"
   }
 }

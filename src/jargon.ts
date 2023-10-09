@@ -1,4 +1,4 @@
-import { randomFromArray } from './fromArray.js'
+import { randomFromArray } from './from-array.js'
 import { jargonAdjectives } from './data/jargon-adjectives.js'
 import { jargonDocuments } from './data/jargon-documents.js'
 import { jargonPhrases } from './data/jargon-phrases.js'

@@ -37,7 +37,7 @@ randomFromArray([1, 2, 3])
 A person's properties are grouped together to make it easy to generate e.g., a contact card with a name and email that match.
 
 ```typescript
-import { person } from 'light-fakery'
+import { randomPerson } from 'light-fakery'
 
 randomPerson()
 // => {

@@ -2,6 +2,8 @@
 
 A lightweight library for generating fake data in JS/TS.
 
+[Documentation](https://light-fakery.netlify.app/)
+
 Its guiding principles are:
 
 - Structured as a [pure ESM package](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c)

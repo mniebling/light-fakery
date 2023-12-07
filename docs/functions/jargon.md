@@ -6,6 +6,10 @@ For now, there are adjectives, phrases and document titles.
 ## randomJargonAdjective
 
 ```typescript
+randomJargonAdjective(): string
+```
+
+```typescript
 import { randomJargonAdjective } from 'light-fakery'
 
 randomJargonAdjective()
@@ -13,6 +17,10 @@ randomJargonAdjective()
 ```
 
 ## randomJargonDocumentTitle
+
+```typescript
+randomJargonDocumentTitle(): string
+```
 
 These are real articles (sometimes with shortened titles) from the [Open Journal of Business and Management](https://www.scirp.org/journal/ojbm/).
 
@@ -24,6 +32,10 @@ randomJargonDocumentTitle()
 ```
 
 ## randomJargonPhrase
+
+```typescript
+randomJargonPhrase(): string
+```
 
 Sourced from https://www.techsoup.org/jargon-generator.
 

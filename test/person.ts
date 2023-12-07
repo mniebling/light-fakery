@@ -1,6 +1,6 @@
 import assert from 'node:assert'
 import { beforeEach, describe, test } from 'node:test'
-import { randomPerson, setSeed } from '../src'
+import { randomPerson, setSeed } from '../src/index.js'
 
 describe('randomPerson()', () => {
 

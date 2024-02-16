@@ -36,6 +36,7 @@ export function setSeed(seed: number): void {
 }
 
 export { randomBoolean } from './boolean.js'
+export { randomDate } from './date.js'
 export { randomFromArray } from './from-array.js'
 export { randomInteger } from './integer.js'
 export { randomJargonAdjective, randomJargonDocumentTitle, randomJargonPhrase } from './jargon.js'

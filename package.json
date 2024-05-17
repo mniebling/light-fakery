@@ -36,6 +36,6 @@
     "rimraf": "5.0.5",
     "tsx": "3.13.0",
     "typescript": "5.2.2",
-    "vitepress": "1.0.0-rc.31"
+    "vitepress": "1.1.4"
   }
 }

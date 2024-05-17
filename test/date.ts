@@ -18,9 +18,7 @@ function dateIsNotInFuture(date: Date): boolean {
 	return date.getTime() < now.getTime()
 }
 
-/**
- * I think property testing would be a better approach here.
- */
+// I think property testing would be a better approach here.
 describe('randomDate()', () => {
 
 	beforeEach(() => setSeed(1))
@@ -28,12 +26,12 @@ describe('randomDate()', () => {
 	test('produces a valid date', () => {
 
 		const date = randomDate({
-			from: new Date('January 1, 2022'),
-			to: new Date('December 31, 2022'),
+			from: new Date('January 1, 2023'),
+			to: new Date('December 31, 2023'),
 		})
 
 		assert.ok(isValidDate(date), 'is valid')
-		assert.deepStrictEqual(date, new Date('2022-08-17T12:07:04.602Z'), 'matches expected')
+		assert.deepStrictEqual(date, new Date('2023-08-17T12:07:04.602Z'), 'matches expected')
 	})
 
 	test('produces random dates', () => {
@@ -51,17 +49,28 @@ describe('randomDate()', () => {
 		assert.throws(
 			// @ts-expect-error - neither provided
 			() => randomDate(),
-			{ message: 'from and to values must be provided' },
+			{ message: 'Both "from" and "to" values must be provided' },
 		)
 		assert.throws(
 			// @ts-expect-error - to not provided
 			() => randomDate({ from: new Date() }),
-			{ message: 'from and to values must be provided' },
+			{ message: 'Both "from" and "to" values must be provided' },
 		)
 		assert.throws(
 			// @ts-expect-error - from not provided
 			() => randomDate({ to: new Date() }),
-			{ message: 'from and to values must be provided' },
+			{ message: 'Both "from" and "to" values must be provided' },
+		)
+	})
+
+	test(`throws if "from" is after "to"`, () => {
+
+		assert.throws(
+			() => randomDate({
+				from: new Date('January 10, 2024'),
+				to: new Date('January 1, 2024'),
+			}),
+			{ message: 'The "from" date must be before or equal to the "to" date' },
 		)
 	})
 })

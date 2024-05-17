@@ -41,7 +41,7 @@ randomInteger(options: { min: number, max: number }): number
 
 Returns a random integer between `min` and `max`.
 
-Both `min` and `max` are required, and the result is inclusive of the endpoints.
+Both `min` and `max` are required and the result is inclusive of the endpoints.
 
 ```typescript
 import { randomInteger } from 'light-fakery'
@@ -65,3 +65,11 @@ import { randomFromArray } from 'light-fakery'
 randomFromArray([1, 2, 3])
 // => 3
 ```
+
+## randomDate
+
+```typescript
+randomDate(options: { from: Date, to: Date }): Date
+```
+
+Returns a random JavaScript [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) between the provided values. Both `from` and `to` are required and the result is inclusive of the endpoints.

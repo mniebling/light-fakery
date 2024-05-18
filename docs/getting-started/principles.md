@@ -12,3 +12,6 @@ Its guiding principles are:
 - Zero dependencies
 
 It uses the [Mulberry32](https://github.com/bryc/code/blob/master/jshash/PRNGs.md#mulberry32) algorithm to generate random numbers.
+
+> [!NOTE]
+> I'm aware that Mulberry32 [isn't state of the art](https://gist.github.com/tommyettinger/46a874533244883189143505d203312c?permalink_comment_id=4365431#gistcomment-4365431). I might try to swap it out in a major bump at some point in the future, but on the other hand I think it's probably fine for the use case here.

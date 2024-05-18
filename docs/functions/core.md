@@ -73,3 +73,13 @@ randomDate(options: { from: Date, to: Date }): Date
 ```
 
 Returns a random JavaScript [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) between the provided values. Both `from` and `to` are required and the result is inclusive of the endpoints.
+
+```typescript
+import { randomDate } from 'light-fakery'
+
+randomDate({
+	from: new Date('January 1, 2023'),
+	to: new Date('December 31, 2023'),
+})
+// => 2023-08-17T12:07:04.602Z
+```

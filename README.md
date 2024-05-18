@@ -20,4 +20,6 @@ Its guiding principles are:
 
 `npm test` — Run unit tests on the compiled output.
 
+`npm run docs:dev` — Run Vitepress locally to work on documentation.
+
 `npm run release` — Kick off an [NPM release](https://www.npmjs.com/package/light-fakery). You'll be prompted for the release details and the command will run a build before releasing. This will also attempt to perform a [GitHub release](https://github.com/release-it/release-it/blob/master/docs/github-releases.md#manual), so you will need to have appropriate permissions there to update the details.

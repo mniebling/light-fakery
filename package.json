@@ -14,7 +14,7 @@
     "prebuild": "rimraf ./dist",
     "build": "tsc",
     "release": "release-it --verbose",
-    "test": "glob -c \"node --loader tsx --no-warnings --test\" \"./test/**/*.ts\"",
+    "test": "vitest",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
@@ -28,14 +28,12 @@
   "bugs": {
     "url": "https://github.com/mniebling/light-fakery/issues"
   },
-  "homepage": "https://github.com/mniebling/light-fakery#readme",
+  "homepage": "https://light-fakery.netlify.app",
   "devDependencies": {
-    "@types/node": "20.8.0",
-    "glob": "10.3.10",
     "release-it": "16.2.1",
     "rimraf": "5.0.5",
-    "tsx": "3.13.0",
     "typescript": "5.2.2",
-    "vitepress": "1.1.4"
+    "vitepress": "1.1.4",
+    "vitest": "1.6.0"
   }
 }

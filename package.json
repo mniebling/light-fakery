@@ -30,10 +30,10 @@
   },
   "homepage": "https://light-fakery.netlify.app",
   "devDependencies": {
-    "release-it": "17.3.0",
-    "rimraf": "5.0.5",
-    "typescript": "5.2.2",
-    "vitepress": "1.1.4",
-    "vitest": "1.6.0"
+    "release-it": "17.6.0",
+    "rimraf": "6.0.1",
+    "typescript": "5.5.4",
+    "vitepress": "1.3.4",
+    "vitest": "2.0.5"
   }
 }

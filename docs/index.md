@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: Documentation
-      link: /getting-started/principles
+      link: /getting-started/about
     - theme: alt
       text: View on GitHub
       link: https://github.com/mniebling/light-fakery

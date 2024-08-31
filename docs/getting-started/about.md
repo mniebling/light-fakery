@@ -1,4 +1,4 @@
-# Principles
+# About light-fakery
 
 `light-fakery` is a lightweight library for generating fake data in JS/TS.
 

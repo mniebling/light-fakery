@@ -18,7 +18,7 @@ Its guiding principles are:
 
 `npm run build` — Compile Typescript and emit to `./dist`.
 
-`npm test` — Run unit tests on the compiled output.
+`npm test` — Run unit tests with Vitest.
 
 `npm run docs:dev` — Run Vitepress locally to work on documentation.
 

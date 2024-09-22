@@ -238,20 +238,13 @@ describe(`throws on non-object input`, () => {
 		expect(call).toThrow(TypeError)
 	})
 
-	test(`throws when undefined values are passed`, () => {
+	test(`throws when undefined is passed for target`, () => {
 
 		const t1 = undefined
 		const o1 = { a: 'override' }
 
 		// @ts-expect-error -- testing invalid argument
 		let call = () => deepOverwriteMerge(t1, o1)
-		expect(call).toThrow(TypeError)
-
-		const t2 = { a: 'target' }
-		const o2 = undefined
-
-		// @ts-expect-error -- testing invalid argument
-		call = () => deepOverwriteMerge(t2, o2)
 		expect(call).toThrow(TypeError)
 	})
 
@@ -275,7 +268,7 @@ describe(`throws on non-object input`, () => {
 
 describe(`edge cases`, () => {
 
-	test(`overrides is an empty object`, () => {
+	test(`returns target when overrides is an empty object`, () => {
 
 		const t = {
 			a: 'target',
@@ -285,7 +278,15 @@ describe(`edge cases`, () => {
 		expect(deepOverwriteMerge(t, o)).toEqual({ a: 'target' })
 	})
 
-	test(`target and overrides are the same exact object`, () => {
+	test(`returns target when overrides is undefined`, () => {
+
+		const t = { a: 'target' }
+		const o = undefined
+
+		expect(deepOverwriteMerge(t, o)).toEqual(t)
+	})
+
+	test(`returns target when target and overrides are the same exact object`, () => {
 
 		const t = {
 			a: 'target',

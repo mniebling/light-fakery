@@ -10,14 +10,24 @@
  */
 export function deepOverwriteMerge<T extends object, U extends object>(
 	target: T,
-	overrides: U,
+	overrides?: U,
 ): T & U {
 
 	if (!isPlainObject(target)) throw new TypeError(`Target must be a plain object.`)
-	if (!isPlainObject(overrides)) throw new TypeError(`Overrides must be a plain object.`)
 
-	const output = { ...target }
+	// The annotation below is necessary because TypeScript's type system is structural,
+	// meaning it doesn't take runtime information into account. In other words, at
+	// compile time it can't use the information from us assigning props from `overrides`
+	// onto `target` in its type definitions.
+	//
+	// We give it the hint that output is going to be `T & U` to work around this.
+	const output = { ...target } as T & U
+	if (overrides === undefined) return output
 
+	if (!isPlainObject(overrides)) throw new TypeError(`Overrides must be undefined or a plain object.`)
+
+	// If we get here, we have objects for both target and overrides and we can
+	// start actually iterating through the properties and merging them.
 	for (const key of Object.keys(overrides)) {
 
 		if (isPlainObject(output[key]) && isPlainObject(overrides[key])) {
@@ -28,13 +38,7 @@ export function deepOverwriteMerge<T extends object, U extends object>(
 		}
 	}
 
-	// The annotation below is necessary because TypeScript's type system is structural,
-	// meaning it doesn't take runtime information into account. In other words, at
-	// compile time it can't use the information from us assigning props from `overrides`
-	// onto `target` in its type definitions.
-	//
-	// We give it the hint that output is going to be `T & U` to work around this.
-	return output as T & U
+	return output
 }
 
 // We're not bothered to have this function narrow the type because the merge
@@ -42,8 +46,12 @@ export function deepOverwriteMerge<T extends object, U extends object>(
 // All we need here is a runtime check for our error handling and recursion.
 function isPlainObject(x: unknown): boolean {
 
-	if (x === null) return false
 	if (typeof x !== 'object') return false
+
+	// Sadly, typeof null is 'object'.
+	if (x === null) return false
+
+	// Arrays have typeof === 'object' too, but we don't want to merge them.
 	if (Array.isArray(x)) return false
 
 	return true

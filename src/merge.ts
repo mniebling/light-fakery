@@ -22,8 +22,9 @@ export function deepOverwriteMerge<T extends object, U extends object>(
 	//
 	// We give it the hint that output is going to be `T & U` to work around this.
 	const output = { ...target } as T & U
-	if (overrides === undefined) return output
 
+	// It's ok for overrides to be undefined, that makes for a smooth DX in some cases.
+	if (overrides === undefined) return output
 	if (!isPlainObject(overrides)) throw new TypeError(`Overrides must be undefined or a plain object.`)
 
 	// If we get here, we have objects for both target and overrides and we can

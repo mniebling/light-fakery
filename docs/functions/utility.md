@@ -1,5 +1,47 @@
 # Utility functions
 
+## deepOverwriteMerge
+
+```typescript
+deepOverwriteMerge<T extends object, U extends object>(
+	target: T,
+	overrides?: U,
+): T & U
+```
+
+This method returns a new object with the properties from `overrides` deeply merged
+into `target`.
+
+If a key exists on both `overrides` and `target` then it will be merged if
+both values are objects, or the `overrides` value will win if it is a
+primitive or array.
+
+Keys from `overrides` with falsy values _will_ be written into the result object.
+
+This method is included in `light-fakery` because it helps build a concise pattern
+for type-safe mock data. For example, imagine that `Employee` has 40 properties on it:
+
+```typescript
+import { deepOverwriteMerge } from 'light-fakery'
+
+function mockEmployee(overrides?: Partial<Employee>): Employee {
+
+	const base: Employee = {
+		// ...define sane defaults for all 40 properties!
+	}
+
+	return deepOverwriteMerge(base, overrides)
+}
+```
+The benefit of this pattern is that it allows for creating mocks with only the contextually relevant data, while still preserving the original object's type structure.
+
+In this example `mockEmployee` is a full-fledged `Employee`:
+
+```typescript
+const newEmployee = mockEmployee({ isNew: true })
+```
+
+
 ## times
 
 ```typescript

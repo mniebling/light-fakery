@@ -26,7 +26,6 @@ describe('randomJargonDocumentTitle()', () => {
 })
 
 
-
 describe('randomJargonPhrase()', () => {
 
 	beforeEach(() => setSeed(1))

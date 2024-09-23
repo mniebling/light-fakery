@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest'
-import { deepOverwriteMerge } from '../src/merge'
+import { deepOverwriteMerge } from '../src/index.js'
 
 describe(`writing basic properties`, () => {
 

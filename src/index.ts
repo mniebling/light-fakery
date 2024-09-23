@@ -35,6 +35,7 @@ export function setSeed(seed: number): void {
   random = mulberry32(seed)
 }
 
+export { deepOverwriteMerge } from './merge.js'
 export { randomBoolean } from './boolean.js'
 export { randomDate } from './date.js'
 export { randomFromArray } from './from-array.js'

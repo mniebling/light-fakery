@@ -1,6 +1,7 @@
 {
 	"compilerOptions": {
 		"declaration": true,
+		"module": "preserve",
 		"outDir": "./dist",
 		"rootDir": "./src",
 		"strict": true,

@@ -1,16 +1,18 @@
 import { defineConfig } from 'vitepress'
+import pkg from '../../package.json'
 
-// https://vitepress.dev/reference/site-config
+
 export default defineConfig({
 	title: 'light-fakery',
 	description: 'A lightweight JS library for generating fake data',
 	themeConfig: {
-		// https://vitepress.dev/reference/default-theme-config
+		// https://vitepress.dev/reference/default-theme-nav
 		nav: [
 			{ text: 'Home', link: '/' },
-			{ text: 'Documentation', link: '/getting-started/about' }
+			{ text: 'Documentation', link: '/getting-started/about' },
+			{ text: pkg.version, link: 'https://github.com/mniebling/light-fakery/releases' },
 		],
-
+		// https://vitepress.dev/reference/default-theme-sidebar
 		sidebar: [
 			{
 				text: 'Getting Started',
@@ -29,7 +31,7 @@ export default defineConfig({
 				]
 			}
 		],
-
+		// https://vitepress.dev/reference/default-theme-config#sociallinks
 		socialLinks: [
 			{ icon: 'github', link: 'https://github.com/mniebling/light-fakery' }
 		]

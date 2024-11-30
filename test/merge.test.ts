@@ -53,7 +53,11 @@ describe(`writing basic properties`, () => {
 
 	test(`write an object prop that is a primitive on target`, () => {
 
-		const t = {
+		type TestObject = {
+			a: string | Record<string, string>
+		}
+
+		const t: TestObject = {
 			a: 'target',
 		}
 		const o = {
@@ -74,7 +78,14 @@ describe(`merging object properties`, () => {
 
 	test(`adds override props to target object`, () => {
 
-		const t = {
+		type TestObject = {
+			a: {
+				b?: string
+				c?: string
+			}
+		}
+
+		const t: TestObject = {
 			a: {
 				b: 'target',
 			},
@@ -117,7 +128,19 @@ describe(`merging object properties`, () => {
 
 	test(`supports multi-level nesting`, () => {
 
-		const t = {
+		type TestObject = {
+			a: {
+				b?: string | {
+					c?: string
+					d?: {
+						e?: string
+					}
+				}
+				f?: string
+			}
+		}
+
+		const t: TestObject = {
 			a: {
 				b: 'target',
 				f: 'target',
@@ -211,12 +234,14 @@ describe(`throws on non-object input`, () => {
 		const t1 = [1]
 		const o1 = { a: 'override' }
 
+		// @ts-expect-error - testing runtime behavior of invalid type
 		let call = () => deepOverwriteMerge(t1, o1)
 		expect(call).toThrow(TypeError)
 
 		const t2 = { a: 'target' }
 		const o2 = [1]
 
+		// @ts-expect-error - testing runtime behavior of invalid type
 		call = () => deepOverwriteMerge(t2, o2)
 		expect(call).toThrow(TypeError)
 	})
@@ -226,14 +251,14 @@ describe(`throws on non-object input`, () => {
 		const t1 = null
 		const o1 = { a: 'override' }
 
-		// @ts-expect-error -- testing invalid argument
+		// @ts-expect-error - testing runtime behavior of invalid type
 		let call = () => deepOverwriteMerge(t1, o1)
 		expect(call).toThrow(TypeError)
 
 		const t2 = { a: 'target' }
 		const o2 = null
 
-		// @ts-expect-error -- testing invalid argument
+		// @ts-expect-error - testing runtime behavior of invalid type
 		call = () => deepOverwriteMerge(t2, o2)
 		expect(call).toThrow(TypeError)
 	})
@@ -243,7 +268,7 @@ describe(`throws on non-object input`, () => {
 		const t1 = undefined
 		const o1 = { a: 'override' }
 
-		// @ts-expect-error -- testing invalid argument
+		// @ts-expect-error - testing runtime behavior of invalid type
 		let call = () => deepOverwriteMerge(t1, o1)
 		expect(call).toThrow(TypeError)
 	})
@@ -253,14 +278,14 @@ describe(`throws on non-object input`, () => {
 		const t1 = 1
 		const o1 = { a: 'override' }
 
-		// @ts-expect-error -- testing invalid argument
+		// @ts-expect-error - testing runtime behavior of invalid type
 		let call = () => deepOverwriteMerge(t1, o1)
 		expect(call).toThrow(TypeError)
 
 		const t2 = { a: 'target' }
 		const o2 = 'string'
 
-		// @ts-expect-error -- testing invalid argument
+		// @ts-expect-error - testing runtime behavior of invalid type
 		call = () => deepOverwriteMerge(t2, o2)
 		expect(call).toThrow(TypeError)
 	})

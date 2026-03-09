@@ -1,3 +1,5 @@
+import type { Config } from 'release-it'
+
 export default {
 	git: {
 		requireCleanWorkingDir: false,
@@ -12,9 +14,4 @@ export default {
 			"npm run build",
 		],
 	},
-	prompt: {
-		src: {
-			status: true,
-		},
-	},
-}
+} satisfies Config

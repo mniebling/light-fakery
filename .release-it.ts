@@ -9,9 +9,10 @@ export default {
 		web: true, // Open a browser to edit the GitHub release (and clean up the changelog!)
 	},
 	hooks: {
-		"before:init": [
-			"npm run test",
-			"npm run build",
+		'before:init': [
+			'npm run lint',
+			'npm run test',
+			'npm run build',
 		],
 	},
 } satisfies Config

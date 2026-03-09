@@ -28,12 +28,12 @@ export default defineConfig({
 					{ text: 'People', link: '/functions/people', docFooterText: 'People functions' },
 					{ text: 'Jargon', link: '/functions/jargon', docFooterText: 'Jargon functions' },
 					{ text: 'Utility', link: '/functions/utility', docFooterText: 'Utility functions' },
-				]
-			}
+				],
+			},
 		],
 		// https://vitepress.dev/reference/default-theme-config#sociallinks
 		socialLinks: [
-			{ icon: 'github', link: 'https://github.com/mniebling/light-fakery' }
-		]
-	}
+			{ icon: 'github', link: 'https://github.com/mniebling/light-fakery' },
+		],
+	},
 })

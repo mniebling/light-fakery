@@ -3,10 +3,10 @@ import { domains } from './data/domains.js'
 import { names } from './data/names.js'
 
 export interface FakePerson {
-  emailAddress: string
-  firstName: string
-  fullName: string
-  lastName: string
+	emailAddress: string
+	firstName: string
+	fullName: string
+	lastName: string
 }
 
 /**
@@ -22,14 +22,14 @@ export interface FakePerson {
  */
 export function randomPerson(): FakePerson {
 
-  const name = randomFromArray(names)
-  const domain = randomFromArray(domains)
-  if (!name || !domain) throw new Error(`randomFromArray returned undefined, which should not happen when fetching from 'names' or 'domains'`)
+	const name = randomFromArray(names)
+	const domain = randomFromArray(domains)
+	if (!name || !domain) throw new Error(`randomFromArray returned undefined, which should not happen when fetching from 'names' or 'domains'`)
 
-  return {
-    emailAddress: `${name[0]}.${name[1]}@${domain}`.toLowerCase(),
-    firstName: name[0],
-    fullName: `${name[0]} ${name[1]}`,
-    lastName: name[1],
-  }
+	return {
+		emailAddress: `${name[0]}.${name[1]}@${domain}`.toLowerCase(),
+		firstName: name[0],
+		fullName: `${name[0]} ${name[1]}`,
+		lastName: name[1],
+	}
 }

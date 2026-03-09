@@ -5,5 +5,5 @@ import { randomFromArray } from './from-array.js'
  */
 export function randomBoolean(): boolean {
 
-  return randomFromArray([true, false])
+	return randomFromArray([true, false])
 }

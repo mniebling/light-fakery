@@ -182,6 +182,21 @@ describe(`merging object properties`, () => {
 		expect(deepOverwriteMerge(t, o)).toEqual({ a: ['override'] })
 	})
 
+	test(`dates should be overwritten, not merged`, () => {
+
+		const targetDate = new Date('2020-01-01T00:00:00.000Z')
+		const overrideDate = new Date('2021-01-01T00:00:00.000Z')
+
+		const t = {
+			a: targetDate,
+		}
+		const o = {
+			a: overrideDate,
+		}
+
+		expect(deepOverwriteMerge(t, o)).toEqual({ a: overrideDate })
+	})
+
 	test(`merges undefined values onto target`, () => {
 
 		const t = {

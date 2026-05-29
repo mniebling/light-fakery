@@ -59,6 +59,9 @@ function isPlainObject(x: unknown): boolean {
 	// Arrays have typeof === 'object' too, but we don't want to merge them.
 	if (Array.isArray(x)) return false
 
+	// Dates have typeof === 'object', but should be overwritten rather than merged.
+	if (x instanceof Date) return false
+
 	return true
 }
 

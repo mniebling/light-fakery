@@ -47,15 +47,15 @@ describe('randomDate()', () => {
 
 		// @ts-expect-error - neither provided
 		const blankCall = () => randomDate()
-		expect(blankCall).toThrowError('Both "from" and "to" values must be provided')
+		expect(blankCall).toThrow('Both "from" and "to" values must be provided')
 
 		// @ts-expect-error - "to" not provided
 		const noToCall = () => randomDate({ from: new Date() })
-		expect(noToCall).toThrowError('Both "from" and "to" values must be provided')
+		expect(noToCall).toThrow('Both "from" and "to" values must be provided')
 
 		// @ts-expect-error - "from" not provided
 		const noFromCall = () => randomDate({ to: new Date() })
-		expect(noFromCall).toThrowError('Both "from" and "to" values must be provided')
+		expect(noFromCall).toThrow('Both "from" and "to" values must be provided')
 	})
 
 	test(`throws if "from" is after "to"`, () => {
@@ -65,6 +65,6 @@ describe('randomDate()', () => {
 			to: new Date('January 1, 2024'),
 		})
 
-		expect(call).toThrowError('The "from" date must be before or equal to the "to" date')
+		expect(call).toThrow('The "from" date must be before or equal to the "to" date')
 	})
 })

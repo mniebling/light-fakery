@@ -10,7 +10,7 @@ describe('randomFromArray()', () => {
 
 		const call = () => randomFromArray([])
 
-		expect(call).toThrowError(`Argument to randomFromArray must have length > 0`)
+		expect(call).toThrow(`Argument to randomFromArray must have length > 0`)
 	})
 
 	test('returns something from the array', () => {

@@ -19,22 +19,22 @@ describe('randomInteger()', () => {
 
 		// @ts-expect-error - invalid type, missing max
 		const noMaxCall = () => randomInteger({ min: 2 })
-		expect(noMaxCall).toThrowError(`Min and max values must be provided`)
+		expect(noMaxCall).toThrow(`Min and max values must be provided`)
 
 		// @ts-expect-error - invalid type, missing min
 		const noMinCall = () => randomInteger({ min: 2 })
-		expect(noMinCall).toThrowError(`Min and max values must be provided`)
+		expect(noMinCall).toThrow(`Min and max values must be provided`)
 
 		// @ts-expect-error - invalid type, missing both min & max
 		const noOptionsCall = () => randomInteger()
-		expect(noOptionsCall).toThrowError(`Min and max values must be provided`)
+		expect(noOptionsCall).toThrow(`Min and max values must be provided`)
 	})
 
 	test('throws if min > max', () => {
 
 		const call = () => randomInteger({ min: 2, max: 1 })
 
-		expect(call).toThrowError(`The min value must be less than or equal to the max`)
+		expect(call).toThrow(`The min value must be less than or equal to the max`)
 	})
 
 	test('returns the value if min = max', () => {

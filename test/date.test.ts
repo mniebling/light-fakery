@@ -25,12 +25,12 @@ describe('randomDate()', () => {
 	test('produces a valid date', () => {
 
 		const date = randomDate({
-			from: new Date('January 1, 2023'),
-			to: new Date('December 31, 2023'),
+			from: new Date('2023-01-01T00:00:00.000Z'),
+			to: new Date('2023-12-31T00:00:00.000Z'),
 		})
 
 		expect(isValidDate(date), 'it exists').toBe(true)
-		expect(date, 'it matches').toEqual(new Date('2023-08-17T12:07:04.602Z'))
+		expect(date, 'it matches').toEqual(new Date('2023-08-17T06:07:04.602Z'))
 	})
 
 	test('produces random dates', () => {
